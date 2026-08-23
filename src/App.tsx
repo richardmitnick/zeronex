@@ -162,7 +162,7 @@ export default function App() {
               id="brand-logo-trigger"
             >
               <span className="text-sm md:text-base font-black tracking-[0.2em] text-white hover:text-white/95 transition-all duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] uppercase">
-                ZERO NETZ
+                ZERO NEX
               </span>
             </button>
           </div>
