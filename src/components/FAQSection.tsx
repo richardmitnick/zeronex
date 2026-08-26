@@ -39,7 +39,7 @@ export default function FAQSection() {
           {FAQ_ITEMS.map((item, index) => (
             <motion.div
               key={index}
-              className="rounded-2xl border border-white/[0.04] bg-[#0c0c0e]/60 backdrop-blur-md p-6 transition-all duration-300 hover:border-white/[0.08] hover:bg-[#0c0c0e]/80"
+              className="rounded-2xl border border-white/4 bg-[#0c0c0e]/60 backdrop-blur-md p-6 transition-all duration-300 hover:border-white/[0.08] hover:bg-[#0c0c0e]/80"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
