@@ -12,7 +12,7 @@ export default function AboutSection() {
             AR
             <span className="absolute bottom-1 right-1 w-4 h-4 bg-emerald-400 border-2 border-zinc-900 rounded-full animate-pulse" />
           </div>
-          <h4 className="text-sm font-bold text-zinc-200"> Abrar Rahman (AR) </h4>
+          <h4 className="text-sm font-bold text-zinc-200"> Abrar Rahman </h4>
           <p className="text-[10px] font-mono text-zinc-500">Cybersecurity Research & Engineering</p>
           <div className="flex gap-3 mt-4">
             <a 
