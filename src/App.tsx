@@ -146,7 +146,7 @@ export default function App() {
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
           className={`pointer-events-auto flex items-center justify-between w-full transition-all duration-500 rounded-2xl md:rounded-full ${
             isScrolled 
-              ? 'max-w-5xl px-4 md:px-6 py-2 bg-black/50 backdrop-blur-md border border-white/[0.1] shadow-[0_12px_40px_rgba(168,85,247,0.15)] scale-[0.98]' 
+              ? 'max-w-5xl px-4 md:px-6 py-2 bg-black/50 backdrop-blur-md border border-white/1 shadow-[0_12px_40px_rgba(168,85,247,0.15)] scale-[0.98]' 
               : 'max-w-6xl px-5 md:px-8 py-2.5 bg-white/3 backdrop-blur-md border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.2)] scale-100'
           }`}
         >
@@ -248,7 +248,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ type: "spring", stiffness: 420, damping: 30 }}
-              className="md:hidden w-[92%] max-w-md mt-3 z-50 bg-black/45 backdrop-blur-md border border-white/[0.08] rounded-3xl p-6 space-y-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] pointer-events-auto"
+              className="md:hidden w-[92%] max-w-md mt-3 z-50 bg-black/45 backdrop-blur-md border border-white/8 rounded-3xl p-6 space-y-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] pointer-events-auto"
             >
               <div className="flex flex-col gap-1 text-sm font-medium">
                 {navItems.map((item) => (
