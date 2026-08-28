@@ -24,7 +24,7 @@ export default function ContactPage({ onBackToHome }: ContactPageProps) {
       {/* Styled Centered Header Section (Send a Message) */}
       <div className="flex flex-col items-center text-center mb-12">
         <div className="inline-flex items-center gap-2 border border-[#52eb8e]/80 text-[#52eb8e] bg-[#52eb8e]/10 py-2.5 px-6 rounded-full font-sans font-medium text-xs tracking-wide shadow-[0_0_24px_rgba(82,235,142,0.15)] select-none">
-          <Mail className="w-4 h-4 text-[#52eb8e] stroke-[2]" />
+          <Mail className="w-4 h-4 text-[#52eb8e] stroke-2" />
           <span>Send a Message</span>
         </div>
       </div>
