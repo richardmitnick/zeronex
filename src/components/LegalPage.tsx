@@ -57,12 +57,12 @@ export default function LegalPage({
           </div>
 
           {/* Document Switching Tabs */}
-          <div className="flex items-center gap-1.5 p-1 bg-zinc-950/60 rounded-xl border border-white/[0.04] self-start sm:self-auto overflow-x-auto max-w-full">
+          <div className="flex items-center gap-1.5 p-1 bg-zinc-950/60 rounded-xl border border-white/4 self-start sm:self-auto overflow-x-auto max-w-full">
             <button
               onClick={() => setActiveTab("privacy")}
               className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all outline-none cursor-pointer whitespace-nowrap ${
                 activeTab === "privacy"
-                  ? "bg-white/10 text-[#52eb8e] border border-white/[0.04]"
+                  ? "bg-white/10 text-[#52eb8e] border border-white/4"
                   : "text-zinc-500 hover:text-zinc-300"
               }`}
             >
@@ -261,7 +261,7 @@ export default function LegalPage({
                   1. Introduction & Scope
                 </h3>
                 <p className="text-zinc-400 text-xs md:text-sm leading-relaxed">
-                  Zeronets ("we," "us") provides high-end penetration testing
+                  Zeronex ("we," "us") provides high-end penetration testing
                   and load testing services. This Privacy Policy explains how we
                   collect, use, and protect personal data from visitors to our
                   website, and how we handle personal data when acting on behalf
