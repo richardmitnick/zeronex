@@ -204,11 +204,10 @@ export default function EncryptedChannel() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-xs font-semibold text-zinc-300 font-sans mb-2">
-                    Company *
+                    Company (optional)
                   </label>
                   <input
                     type="text"
-                    required
                     disabled={isSubmitting}
                     placeholder="e.g. Acme Corp"
                     value={company}
