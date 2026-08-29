@@ -204,11 +204,10 @@ export default function EncryptedChannel() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-xs font-semibold text-zinc-300 font-sans mb-2">
-                    Company *
+                    Company (optional)
                   </label>
                   <input
                     type="text"
-                    required
                     disabled={isSubmitting}
                     placeholder="e.g. Acme Corp"
                     value={company}
@@ -316,7 +315,7 @@ export default function EncryptedChannel() {
                       )}
                       {turnstileState === "verified" && (
                         <div className="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500 flex items-center justify-center text-emerald-400">
-                          <Check className="w-3.5 h-3.5 stroke-[3]" />
+                          <Check className="w-3.5 h-3.5 stroke-3" />
                         </div>
                       )}
                     </div>
@@ -364,7 +363,7 @@ export default function EncryptedChannel() {
               )}
 
               {/* Row 5: Submit Footer */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-6 border-t border-white/[0.05] mt-8">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-6 border-t border-white/5 mt-8">
                 <span className="text-xs text-zinc-500 font-sans">
                   By submitting, you agree to our NDA and privacy policy
                 </span>

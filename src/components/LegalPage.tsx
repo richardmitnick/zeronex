@@ -40,7 +40,7 @@ export default function LegalPage({
           <span>Back to Home</span>
         </button>
 
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/[0.04] pb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/4 pb-8">
           <div>
             <div className="inline-flex items-center gap-1.5 border border-[#52eb8e]/20 text-[#52eb8e] bg-[#52eb8e]/5 py-1 px-3 rounded-full font-mono text-[10px] uppercase tracking-wider mb-4">
               <Shield className="w-3 h-3 text-[#52eb8e]" />
@@ -57,12 +57,12 @@ export default function LegalPage({
           </div>
 
           {/* Document Switching Tabs */}
-          <div className="flex items-center gap-1.5 p-1 bg-zinc-950/60 rounded-xl border border-white/[0.04] self-start sm:self-auto overflow-x-auto max-w-full">
+          <div className="flex items-center gap-1.5 p-1 bg-zinc-950/60 rounded-xl border border-white/4 self-start sm:self-auto overflow-x-auto max-w-full">
             <button
               onClick={() => setActiveTab("privacy")}
               className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all outline-none cursor-pointer whitespace-nowrap ${
                 activeTab === "privacy"
-                  ? "bg-white/10 text-[#52eb8e] border border-white/[0.04]"
+                  ? "bg-white/10 text-[#52eb8e] border border-white/4"
                   : "text-zinc-500 hover:text-zinc-300"
               }`}
             >
@@ -73,7 +73,7 @@ export default function LegalPage({
               onClick={() => setActiveTab("terms")}
               className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all outline-none cursor-pointer whitespace-nowrap ${
                 activeTab === "terms"
-                  ? "bg-white/10 text-[#52eb8e] border border-white/[0.04]"
+                  ? "bg-white/10 text-[#52eb8e] border border-white/4"
                   : "text-zinc-500 hover:text-zinc-300"
               }`}
             >
@@ -261,7 +261,7 @@ export default function LegalPage({
                   1. Introduction & Scope
                 </h3>
                 <p className="text-zinc-400 text-xs md:text-sm leading-relaxed">
-                  Zeronets ("we," "us") provides high-end penetration testing
+                  Zeronex ("we," "us") provides high-end penetration testing
                   and load testing services. This Privacy Policy explains how we
                   collect, use, and protect personal data from visitors to our
                   website, and how we handle personal data when acting on behalf
