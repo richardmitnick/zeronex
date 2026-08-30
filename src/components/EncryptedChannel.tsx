@@ -207,6 +207,7 @@ export default function EncryptedChannel() {
                     Company (optional)
                   </label>
                   <input
+                    required={false}
                     type="text"
                     disabled={isSubmitting}
                     placeholder="e.g. Acme Corp"
@@ -374,7 +375,6 @@ export default function EncryptedChannel() {
                     turnstileState !== "verified" ||
                     !name ||
                     !email ||
-                    !company ||
                     !service
                   }
                   className="px-8 py-3.5 bg-[#52eb8e] hover:bg-[#46df81] text-zinc-950 text-xs font-bold rounded-full transition-all duration-300 cursor-pointer shadow-[0_8px_32px_rgba(82,235,142,0.25)] hover:shadow-[0_8px_32px_rgba(82,235,142,0.4)] flex items-center justify-center gap-2 border border-[#52eb8e]/30 disabled:opacity-40 disabled:pointer-events-none active:scale-95 shrink-0"
