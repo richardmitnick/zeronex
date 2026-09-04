@@ -1,6 +1,5 @@
-import { motion } from 'motion/react';
-import { ArrowLeft, Mail } from 'lucide-react';
-import EncryptedChannel from './EncryptedChannel';
+import { ArrowLeft, Mail } from "lucide-react";
+import EncryptedChannel from "./EncryptedChannel";
 
 interface ContactPageProps {
   onBackToHome: () => void;
@@ -9,7 +8,6 @@ interface ContactPageProps {
 export default function ContactPage({ onBackToHome }: ContactPageProps) {
   return (
     <div className="min-h-screen text-zinc-300 font-sans relative overflow-x-hidden pt-28 pb-20 px-6 max-w-5xl mx-auto w-full">
-      
       {/* Top Header Controls */}
       <div className="mb-8">
         <button
@@ -33,7 +31,6 @@ export default function ContactPage({ onBackToHome }: ContactPageProps) {
       <div className="max-w-4xl mx-auto">
         <EncryptedChannel />
       </div>
-
     </div>
   );
 }

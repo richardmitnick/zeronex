@@ -7,7 +7,7 @@ import {
   Loader2,
   ArrowRight,
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 
 export default function EncryptedChannel() {
   const [name, setName] = useState("");
@@ -129,7 +129,7 @@ export default function EncryptedChannel() {
     <div className="w-full max-w-4xl mx-auto" id="secure-message-portal">
       <AnimatePresence mode="wait">
         {submitSuccess ? (
-          <motion.div
+          <m.div
             key="success"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -154,9 +154,9 @@ export default function EncryptedChannel() {
             >
               Okay
             </button>
-          </motion.div>
+          </m.div>
         ) : (
-          <motion.div
+          <m.div
             key="form"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -200,17 +200,17 @@ export default function EncryptedChannel() {
                 </div>
               </div>
 
-              {/* Row 2: Company and Service */}
+              {/* Row 2: Company / Studio Name */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-xs font-semibold text-zinc-300 font-sans mb-2">
-                    Company (optional)
+                    Company / Studio Name *
                   </label>
                   <input
-                    required={false}
                     type="text"
+                    required
                     disabled={isSubmitting}
-                    placeholder="e.g. Acme Corp"
+                    placeholder="Acme Corp"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
                     className="w-full px-4 py-3 bg-[#121212]/90 border border-zinc-800/80 rounded-xl focus:outline-none focus:border-[#52eb8e]/60 focus:ring-1 focus:ring-[#52eb8e]/20 text-zinc-200 placeholder-zinc-600 transition-all duration-300 font-sans text-xs"
@@ -226,75 +226,58 @@ export default function EncryptedChannel() {
                       disabled={isSubmitting}
                       value={service}
                       onChange={(e) => setService(e.target.value)}
-                      className="w-full px-4 py-3 bg-[#121212]/90 border border-zinc-800/80 rounded-xl focus:outline-none focus:border-[#52eb8e]/60 focus:ring-1 focus:ring-[#52eb8e]/20 text-zinc-200 transition-all duration-300 font-sans text-xs appearance-none cursor-pointer pr-10"
+                      className="w-full px-4 py-3 bg-[#121212]/90 border border-zinc-800/80 rounded-xl focus:outline-none focus:border-[#52eb8e]/60 focus:ring-1 focus:ring-[#52eb8e]/20 text-zinc-200 transition-all duration-300 font-sans text-xs appearance-none cursor-pointer"
                     >
-                      <option value="" disabled>
-                        Select a service
+                      <option value="" disabled className="bg-zinc-900">
+                        Select a cybersecurity service...
                       </option>
-                      <option value="Smart Contract Audit">
-                        Smart Contract Audit
+                      <option
+                        value="Penetration Testing"
+                        className="bg-zinc-900"
+                      >
+                        Penetration Testing & Red Teaming
                       </option>
-                      <option value="Web3 Infrastructure Pen-testing">
-                        Web3 Infrastructure Pen-testing
+                      <option
+                        value="Architecture Audit"
+                        className="bg-zinc-900"
+                      >
+                        Cloud Architecture & Kubernetes Guard
                       </option>
-                      <option value="Offensive Security Assessment">
-                        Offensive Security Assessment
+                      <option value="Source Code Audit" className="bg-zinc-900">
+                        Secure Source Code & Logic Audit
                       </option>
-                      <option value="Cryptographic Code Review">
-                        Cryptographic Code Review
+                      <option
+                        value="Compliance Readiness"
+                        className="bg-zinc-900"
+                      >
+                        Compliance Readiness (SOC 2, ISO 27001)
                       </option>
-                      <option value="Other Security Consulting">
-                        Other Security Consulting
+                      <option value="Custom Scope" className="bg-zinc-900">
+                        Custom Offensive Security Scope
                       </option>
                     </select>
-                    <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-500">
-                      <ChevronDown className="w-4 h-4" />
-                    </div>
+                    <ChevronDown className="w-4 h-4 text-zinc-500 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
                 </div>
               </div>
 
-              {/* Row 3: Project Details */}
+              {/* Row 3: Project Details / Target Scope */}
               <div>
                 <label className="block text-xs font-semibold text-zinc-300 font-sans mb-2">
-                  Project Details
+                  Project Details / Target Scope
                 </label>
                 <textarea
+                  rows={4}
                   disabled={isSubmitting}
-                  rows={6}
-                  placeholder="Tell us about your project, current security concerns, launch timeline, or any specific requirements..."
+                  placeholder="Share a brief overview of your infrastructure, target timeline, IP/domains (optional), or any specific compliance objectives..."
                   value={details}
                   onChange={(e) => setDetails(e.target.value)}
-                  className="w-full p-4 bg-[#121212]/90 border border-zinc-800/80 rounded-xl focus:outline-none focus:border-[#52eb8e]/60 focus:ring-1 focus:ring-[#52eb8e]/20 text-zinc-200 placeholder-zinc-600 transition-all duration-300 font-sans text-xs resize-none leading-relaxed"
+                  className="w-full px-4 py-3 bg-[#121212]/90 border border-zinc-800/80 rounded-xl focus:outline-none focus:border-[#52eb8e]/60 focus:ring-1 focus:ring-[#52eb8e]/20 text-zinc-200 placeholder-zinc-600 transition-all duration-300 font-sans text-xs resize-none"
                 />
               </div>
 
-              {/* Row 4: Cloudflare Verification */}
-              <div className="space-y-3">
-                {/* Automatic Verification Row */}
-                <div
-                  className={`w-full border rounded-xl p-3 flex items-center gap-3 font-sans text-xs transition-all duration-500 ${
-                    turnstileState === "verified"
-                      ? "bg-emerald-950/20 border-emerald-500/30 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.05)]"
-                      : "bg-[#111111]/60 border-zinc-800/60 text-zinc-400"
-                  }`}
-                >
-                  {turnstileState === "verified" ? (
-                    <Check className="w-4 h-4 text-[#52eb8e] shrink-0" />
-                  ) : (
-                    <Loader2 className="w-4 h-4 text-[#52eb8e] animate-spin shrink-0" />
-                  )}
-                  <span>
-                    {turnstileState === "idle" &&
-                      "Initializing browser integrity signature check..."}
-                    {turnstileState === "verifying" &&
-                      "Verifying you're human... (this is automatic)"}
-                    {turnstileState === "verified" &&
-                      "Secure Integrity Verified. Human Operator Confirmed."}
-                  </span>
-                </div>
-
-                {/* Cloudflare Turnstile Box */}
+              {/* Row 4: Cloudflare Turnstile Human Verification Box */}
+              <div className="pt-2">
                 <div
                   onClick={handleTurnstileClick}
                   className={`border rounded-lg px-4 py-3 flex items-center justify-between w-full max-w-[320px] h-16 transition-all duration-300 relative select-none ${
@@ -393,7 +376,7 @@ export default function EncryptedChannel() {
                 </button>
               </div>
             </form>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
