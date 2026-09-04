@@ -12,6 +12,7 @@ const ContactPage = lazy(() => import("./components/contact/ContactPage"));
 const HeroBgVideoUrl =
   "https://res.cloudinary.com/dyebrg5xa/video/upload/v1788491740/robotics_bg_video_x88ipm.mp4";
 import HeroBgVideo from "./components/Hero/HeroBgVideo";
+import DevGuideBanner from "./components/DevGuideBanner/DevGuideBanner";
 
 export const navItems = [
   { id: "home-section", label: "Home" },
@@ -28,6 +29,8 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("home-section");
   const [isScrolled, setIsScrolled] = useState(false);
   const isAutoScrolling = useRef(false);
+  const [isDevGuide, setIsDevGuide] = useState(true);
+
   const [currentView, setCurrentView] = useState<"home" | "legal" | "contact">(
     "home",
   );
@@ -121,6 +124,8 @@ export default function App() {
       <div
         className={`min-h-screen  theme-neon-circuit text-zinc-100 font-sans selection:bg-zinc-700 selection:text-white overflow-x-hidden pb-12 relative transition-all mx-auto duration-750`}
       >
+        <DevGuideBanner  setIsDevGuide={setIsDevGuide} />
+
         <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0 opacity-60">
           <HeroBgVideo customVideoUrl={HeroBgVideoUrl} />
         </div>
@@ -134,6 +139,7 @@ export default function App() {
           setMobileMenuOpen={setMobileMenuOpen}
           mobileMenuOpen={mobileMenuOpen}
           setCurrentView={setCurrentView}
+          isDevGuide={isDevGuide}
         />
 
         {currentView === "home" && (
