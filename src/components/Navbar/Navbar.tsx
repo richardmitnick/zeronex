@@ -21,6 +21,7 @@ interface NavbarProps {
   scrollToSection: (id: string) => void;
   activeSection: string;
   setMobileMenuOpen: (open: boolean) => void;
+  isDevGuide: boolean;
   mobileMenuOpen: boolean;
   setCurrentView: (view: "home" | "legal" | "contact") => void;
 }
@@ -96,6 +97,7 @@ export const Navbar = ({
   setMobileMenuOpen,
   mobileMenuOpen,
   setCurrentView,
+  isDevGuide,
 }: NavbarProps) => {
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -157,7 +159,9 @@ export const Navbar = ({
 
   return (
     <>
-      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 flex flex-col items-center px-3 pt-3 lg:px-5 lg:pt-5">
+      <div
+        className={`pointer-events-none fixed inset-x-0 top-0 z-50 flex flex-col items-center px-3 pt-3 ${isDevGuide && "mt-14"} lg:px-5 lg:pt-5`}
+      >
         <m.header
           layout
           transition={{

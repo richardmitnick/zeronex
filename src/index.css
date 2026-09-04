@@ -149,3 +149,16 @@ html {
 }
 
 
+@keyframes devguide-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-devguide-marquee {
+  animation: devguide-marquee 22s linear infinite;
+}
