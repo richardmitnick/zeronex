@@ -82,7 +82,7 @@ export default function ProcessTimeline() {
   return (
     <div className="relative max-w-5xl mx-auto py-6">
       {/* Decorative vertical center line for timeline (hidden on mobile, visible on md+) */}
-      <div className="absolute left-[33px] md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-purple-500/30 via-slate-100 to-white/20 pointer-events-none" />
+      <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-purple-500/30 via-slate-100 to-white/20 pointer-events-none" />
 
       <m.div
         variants={containerVariants}
